@@ -1,0 +1,27 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<div style="text-align:center">
+  <p>Choose a file Excel to read data<p>
+  <input type="file" style="display: inline-block;" (change)="incomingfile($event)" placeholder="Upload file" accept=".xlsx">
+  <button type="button" class="btn btn-info" (click)="upload()" >Upload</button>
+</div>
+<div style="text-align:center">
+  <table>
+    <tr>
+      <td>Num</td>
+      <td>Name</td>
+      <td>SN</td>
+      <td>Age</td>
+    </tr>
+    <tr *ngFor="let item of data">
+      <td style="font-weight: bold; color: blue">{{item.Num}}</td>
+      <td>{{item.Name}}</td>
+      <td>{{item.SN}}</td>
+      <td>{{item.Age}}</td>
+    </tr>
+  </table>
+  <p>Export this table to Excel<p>
+  <button (click)="exportAsXLSX()">Export to excel</button>
+  <p>Generate word file<p>
+    <button (click)="download()">Generate word file</button>
+    <button (click)="create_excel_styles()">Generate excel file</button>
+</div>
